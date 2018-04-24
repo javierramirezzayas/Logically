@@ -18,7 +18,10 @@ tokens = [
     'TABLE',
     'VENN',
     'CKT',
-    'HELP'
+    'HELP',
+    'NOT',
+    'BUFFER',
+    'EXIT'
 
 ]
 
@@ -34,6 +37,9 @@ t_TABLE = r'\TABLE'
 t_VENN = r'\VENN'
 t_CKT = r'\CKT'
 t_HELP = r'\HELP'
+t_NOT = r'\NOT'
+t_BUFFER = r'\BUFFER'
+t_EXIT = r'\EXIT'
 t_ignore = r' '
 
 
