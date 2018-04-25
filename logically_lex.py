@@ -7,8 +7,8 @@ import sys
 
 tokens = [
 
-    'AND',
     'NAND',
+    'AND',
     'OR',
     'NOR',
     'XOR',
@@ -25,8 +25,8 @@ tokens = [
 ]
 
 
-t_AND = r'\AND'
 t_NAND = r'\NAND'
+t_AND = r'\.AND'
 t_OR = r'\OR'
 t_NOR = r'\NOR'
 t_XOR = r'\XOR'
@@ -43,13 +43,16 @@ t_ignore = r' '
 
 
 def t_NAME(t):
-    r'[a-zA-Z_]+'
+    r'[a-z][a-zA-Z]*'
     t.type = 'NAME'
     return t
 
 def t_error(t):
     print("Illegal Character(s)")
+    print(t)
     t.lexer.skip(1)
 
 lexer = lex.lex()
+
+
 
