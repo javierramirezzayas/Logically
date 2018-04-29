@@ -2,6 +2,7 @@ import ply.yacc as yacc
 import logically_lex
 
 tokens = logically_lex.tokens
+env = [list()]
 
 
 def p_assign(p):
@@ -9,7 +10,14 @@ def p_assign(p):
     assign : NAME EQUALS expr term
            | func
     '''
-    # print(p[0])
+    # print(p[1])
+    expression = env.pop()
+    # print(expression)
+    expression.insert(0, p[1])
+    # print(expression)
+    env.append(expression)
+    env.append(list())
+    print(env)
 
 
 def p_expr(p):
@@ -23,15 +31,18 @@ def p_expr(p):
          | NOR
          | BUFFER
      '''
-    print(p[1])
-
+    expr = env.pop()
+    expr.insert(0, p[1])
+    env.append(expr)
 
 def p_term(p):
     '''
     term : NAME term
          | NAME
     '''
-    print(p[1])
+    expr = env.pop()
+    expr.append(p[1])
+    env.append(expr)
 
 
 def p_func(p):
@@ -42,6 +53,8 @@ def p_func(p):
          | HELP
          | EXIT
     '''
+
+    
 
 
 def p_error(p):
