@@ -1,5 +1,6 @@
 import ply.yacc as yacc
 import logically_lex
+import function_helper
 
 tokens = logically_lex.tokens
 env = [list()]
@@ -10,11 +11,8 @@ def p_assign(p):
     assign : NAME EQUALS expr term
            | func
     '''
-    # print(p[1])
     expression = env.pop()
-    # print(expression)
     expression.insert(0, p[1])
-    # print(expression)
     env.append(expression)
     env.append(list())
     print(env)
@@ -32,8 +30,9 @@ def p_expr(p):
          | BUFFER
      '''
     expr = env.pop()
-    expr.insert(0, p[1])
+    expr.insert(1, p[1])
     env.append(expr)
+
 
 def p_term(p):
     '''
@@ -41,7 +40,7 @@ def p_term(p):
          | NAME
     '''
     expr = env.pop()
-    expr.append(p[1])
+    expr[0] = expr[0] + " " + p[1]
     env.append(expr)
 
 
@@ -53,8 +52,7 @@ def p_func(p):
          | HELP
          | EXIT
     '''
-
-    
+    function_helper.function_parser(p[1], env)
 
 
 def p_error(p):
@@ -66,7 +64,7 @@ parser = yacc.yacc()
 
 while True:
     try:
-        s = input('>>>')
+        s = input('>>')
     except EOFError:
         break
     parser.parse(s)
