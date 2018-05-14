@@ -31,7 +31,7 @@ def p_assign(p):
         # If expression is not input of any tree then create it as a new expression tree.
         if count is 0:
             forest.append(p[0])
-        # print(forest)
+        print(forest)
 
 
 def p_expr(p):
