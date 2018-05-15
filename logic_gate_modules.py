@@ -1,6 +1,7 @@
 import SchemDraw as schem
 import SchemDraw.elements as e
 import SchemDraw.logic as l
+import tkinter
 
 class logicGateModules:
 

@@ -1,5 +1,6 @@
 import sys
 import expression_converter as conv
+import logic_gates_drawer as lgd
 
 
 def function_parser(func, expression=None):
@@ -36,10 +37,16 @@ def simplify_expression(env):
 
 def generate_circuit(env):
     print("Generate circuit diagram")
-
+    try:
+        s = lgd.initDrawSchematic()
+        lgd.rec_draw(s, env)
+        lgd.drawSchematic(s)
+    except Exception:
+        return
 
 def generate_venn(env):
     print("Generate venn diagram")
+
 
 
 def show_help():
