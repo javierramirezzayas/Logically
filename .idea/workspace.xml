@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c43cc6e-e76f-43e1-bb14-3e92cb5c0435" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/logically.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/logically.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/function_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logically_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logically_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simplify.py" beforeDir="false" afterPath="$PROJECT_DIR$/simplify.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="function_helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/function_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
+            <state relative-caret-position="246">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -40,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VennComplete.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VennComplete.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VennComplete.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="-32">
               <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -55,8 +52,8 @@
       <file leaf-file-name="logically_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logically_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            <state relative-caret-position="119">
+              <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -64,14 +61,38 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="simplify.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simplify.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="467" column="33" lean-forward="true" selection-start-line="467" selection-start-column="33" selection-end-line="467" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>not(</find>
+      <find>construct</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>( not</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>C:\Users\jeano\PycharmProjects\logically</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -80,8 +101,9 @@
         <option value="$PROJECT_DIR$/logic_gate_modules.py" />
         <option value="$PROJECT_DIR$/logic_gates_drawer.py" />
         <option value="$PROJECT_DIR$/logically_parser.py" />
-        <option value="$PROJECT_DIR$/function_helper.py" />
         <option value="$PROJECT_DIR$/VennComplete.py" />
+        <option value="$PROJECT_DIR$/function_helper.py" />
+        <option value="$PROJECT_DIR$/simplify.py" />
       </list>
     </option>
   </component>
@@ -156,10 +178,26 @@
       <option name="presentableId" value="Default" />
       <updated>1523315643783</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added code for drawing venn diagrams.">
+      <created>1526404396814</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526404396814</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added code for simplifying logical expressions.">
+      <created>1526404973524</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526404973524</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -201,6 +239,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added code for drawing venn diagrams." />
+    <MESSAGE value="Added code for simplifying logical expressions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added code for simplifying logical expressions." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/logically_lex.py">
@@ -311,10 +354,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/VennComplete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logically_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        <state relative-caret-position="119">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -323,21 +376,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/function_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
+        <state relative-caret-position="246">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VennComplete.py">
+    <entry file="file://$PROJECT_DIR$/simplify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="467" column="33" lean-forward="true" selection-start-line="467" selection-start-column="33" selection-end-line="467" selection-end-column="33" />
         </state>
       </provider>
     </entry>

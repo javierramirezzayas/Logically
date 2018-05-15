@@ -462,8 +462,8 @@ stringArray = []
 
 
 # Constructs array of dictionaries that will be used to construct the table
-def constructDictionary(gustavoDict):
-    for dict in gustavoDict:
+def constructDictionary(Dict):
+    for dict in Dict:
         dummyDict = {}
         for k, v in dict.items():
             dummyDict["min"] = v
