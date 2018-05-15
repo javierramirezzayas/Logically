@@ -20,6 +20,8 @@ tokens = [
     'TABLE',
     'VENN',
     'CKT',
+    'DEL',
+    'SIMPLIFY',
     'HELP',
     'EXIT'
 ]
@@ -31,10 +33,13 @@ reserved = {
     'XOR': 'XOR',
     'XNOR': 'XNOR',
     'NOT': 'NOT',
+    'NAND': 'NAND',
     'TABLE': 'TABLE',
     'VENN': 'VENN',
     'CKT': 'CKT',
+    'DEL' : 'DEL',
     'HELP': 'HELP',
+    'SIMPLIFY': 'SIMPLIFY',
     'EXIT': 'EXIT'
 }
 
@@ -57,7 +62,7 @@ t_ignore = r' '
 
 
 def t_NAME(t):
-    r'[a-zA-Z][0-9a-zA-Z]*'
+    r'[a-zA-Z][a-zA-Z0-9]*'
     if t.value in reserved:
         t.type = reserved[t.value]
     else:
