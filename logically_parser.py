@@ -1,6 +1,7 @@
 import ply.yacc as yacc
 import logically_lex
 import function_helper
+import logic_gates_drawer
 
 tokens = logically_lex.tokens
 env = [list()]
@@ -158,8 +159,6 @@ def get_node(name, t=None):
 # Function to delete expression from tree
 def delete_node(name, t=None):
     global forest
-
-    print("Before: " + str(forest))
 
     if t is not None:
         if len(t) > 2:
