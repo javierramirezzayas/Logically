@@ -14,6 +14,8 @@ def function_parser(func, expression=None):
         generate_circuit(expression)
     elif func == "SIMPLIFY":
         simplify_expression(expression)
+    elif func == "DISPLAY":
+        generate_display(expression)
     elif func == "HELP":
         show_help()
     elif func == "EXIT":
@@ -57,18 +59,24 @@ def generate_venn(env):
     except Exception:
         return
 
+def generate_display(env):
+    print("Displaying expression:")
+    expression = conv.env_to_expr(env)
+    print(str(expression))
+
 
 def show_help():
     str = '''
     To declare an expression:
     out = OP input input ...
     
-    Available OP's:
+    Available Operators:
     AND OR NOT XOR NOR NAND XNOR
     
     Available functions:
     TABLE name - generate the truth table for the specified expression.
     SIMPLIFY name - obtain a simplified version of the specified expression.
+    DISPLAY name - display in the console the specified expression
     CKT name - draw the logic circuits for the specified expression.
     VENN name - create a Venn diagram for the specified expression.
     DEL name - remove created expression.

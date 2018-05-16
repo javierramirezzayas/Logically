@@ -23,16 +23,21 @@ def p_assign(p):
             forest.append(p[0])
             count = 1
         else:  # Check existing trees to see if one has the expression as an input.
+            cnt = 0
             for i in range(len(forest)):
                 forest[i], check = add_node(forest[i], p[0])
-                # print(str())
                 if check is 1:
                     count = count + 1
+                    cnt = count - 1
 
         # If expression is not input of any tree then create it as a new expression tree.
         if count is 0:
             forest.append(p[0])
-        print(forest)
+            cnt = len(forest) - 1
+        # Feedback where is the input located
+        # print(count)
+        # print(forest)
+        print("Added Expression to: ", forest[cnt][0])
 
 
 def p_expr(p):
@@ -68,6 +73,7 @@ def p_func(p):
          | VENN NAME
          | CKT NAME
          | SIMPLIFY NAME
+         | DISPLAY NAME
          | HELP
          | EXIT
     '''
@@ -81,9 +87,11 @@ def p_func(p):
             print(p[2] + " is an input signal, not an expression.")
         else:
             if p[1] == "DEL":
+                temp = p[2]
                 delete_node(p[2])
+                print("Deleted expession: ", temp)
+                temp = None
                 global forest
-                # print(forest)
             else:
                 function_helper.function_parser(p[1], expression)
 
@@ -192,6 +200,9 @@ def delete_node(name, t=None):
 
 
 parser = yacc.yacc()
+print("Welcome to logically")
+print("(pre-alpha) ver. 1.0.0")
+print("\n")
 while True:
     try:
         s = input('>>')

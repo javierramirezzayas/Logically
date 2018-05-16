@@ -20,8 +20,9 @@ Rule 14    func -> DEL NAME
 Rule 15    func -> VENN NAME
 Rule 16    func -> CKT NAME
 Rule 17    func -> SIMPLIFY NAME
-Rule 18    func -> HELP
-Rule 19    func -> EXIT
+Rule 18    func -> DISPLAY NAME
+Rule 19    func -> HELP
+Rule 20    func -> EXIT
 
 Terminals, with rules where they appear
 
@@ -29,10 +30,11 @@ AND                  : 4
 BUFFER               : 10
 CKT                  : 16
 DEL                  : 14
+DISPLAY              : 18
 EQUALS               : 1
-EXIT                 : 19
-HELP                 : 18
-NAME                 : 1 11 12 13 14 15 16 17
+EXIT                 : 20
+HELP                 : 19
+NAME                 : 1 11 12 13 14 15 16 17 18
 NAND                 : 8
 NOR                  : 9
 NOT                  : 5
@@ -63,126 +65,112 @@ state 0
     (15) func -> . VENN NAME
     (16) func -> . CKT NAME
     (17) func -> . SIMPLIFY NAME
-    (18) func -> . HELP
-    (19) func -> . EXIT
+    (18) func -> . DISPLAY NAME
+    (19) func -> . HELP
+    (20) func -> . EXIT
 
-    NAME            shift and go to state 6
-    TABLE           shift and go to state 10
-    DEL             shift and go to state 5
-    VENN            shift and go to state 2
-    CKT             shift and go to state 8
-    SIMPLIFY        shift and go to state 9
-    HELP            shift and go to state 4
-    EXIT            shift and go to state 7
+    NAME            shift and go to state 9
+    TABLE           shift and go to state 2
+    DEL             shift and go to state 11
+    VENN            shift and go to state 8
+    CKT             shift and go to state 6
+    SIMPLIFY        shift and go to state 7
+    DISPLAY         shift and go to state 3
+    HELP            shift and go to state 1
+    EXIT            shift and go to state 10
 
-    func                           shift and go to state 1
-    assign                         shift and go to state 3
+    assign                         shift and go to state 4
+    func                           shift and go to state 5
 
 state 1
+
+    (19) func -> HELP .
+
+    $end            reduce using rule 19 (func -> HELP .)
+
+
+state 2
+
+    (13) func -> TABLE . NAME
+
+    NAME            shift and go to state 12
+
+
+state 3
+
+    (18) func -> DISPLAY . NAME
+
+    NAME            shift and go to state 13
+
+
+state 4
+
+    (0) S' -> assign .
+
+
+
+state 5
 
     (2) assign -> func .
 
     $end            reduce using rule 2 (assign -> func .)
 
 
-state 2
-
-    (15) func -> VENN . NAME
-
-    NAME            shift and go to state 11
-
-
-state 3
-
-    (0) S' -> assign .
-
-
-
-state 4
-
-    (18) func -> HELP .
-
-    $end            reduce using rule 18 (func -> HELP .)
-
-
-state 5
-
-    (14) func -> DEL . NAME
-
-    NAME            shift and go to state 12
-
-
 state 6
-
-    (1) assign -> NAME . EQUALS expr term
-
-    EQUALS          shift and go to state 13
-
-
-state 7
-
-    (19) func -> EXIT .
-
-    $end            reduce using rule 19 (func -> EXIT .)
-
-
-state 8
 
     (16) func -> CKT . NAME
 
     NAME            shift and go to state 14
 
 
-state 9
+state 7
 
     (17) func -> SIMPLIFY . NAME
 
     NAME            shift and go to state 15
 
 
-state 10
+state 8
 
-    (13) func -> TABLE . NAME
+    (15) func -> VENN . NAME
 
     NAME            shift and go to state 16
 
 
+state 9
+
+    (1) assign -> NAME . EQUALS expr term
+
+    EQUALS          shift and go to state 17
+
+
+state 10
+
+    (20) func -> EXIT .
+
+    $end            reduce using rule 20 (func -> EXIT .)
+
+
 state 11
 
-    (15) func -> VENN NAME .
+    (14) func -> DEL . NAME
 
-    $end            reduce using rule 15 (func -> VENN NAME .)
+    NAME            shift and go to state 18
 
 
 state 12
 
-    (14) func -> DEL NAME .
+    (13) func -> TABLE NAME .
 
-    $end            reduce using rule 14 (func -> DEL NAME .)
+    $end            reduce using rule 13 (func -> TABLE NAME .)
 
 
 state 13
 
-    (1) assign -> NAME EQUALS . expr term
-    (3) expr -> . OR
-    (4) expr -> . AND
-    (5) expr -> . NOT
-    (6) expr -> . XNOR
-    (7) expr -> . XOR
-    (8) expr -> . NAND
-    (9) expr -> . NOR
-    (10) expr -> . BUFFER
+    (18) func -> DISPLAY NAME .
 
-    OR              shift and go to state 21
-    AND             shift and go to state 22
-    NOT             shift and go to state 17
-    XNOR            shift and go to state 25
-    XOR             shift and go to state 23
-    NAND            shift and go to state 20
-    NOR             shift and go to state 19
-    BUFFER          shift and go to state 18
+    $end            reduce using rule 18 (func -> DISPLAY NAME .)
 
-    expr                           shift and go to state 24
 
 state 14
 
@@ -200,85 +188,115 @@ state 15
 
 state 16
 
-    (13) func -> TABLE NAME .
+    (15) func -> VENN NAME .
 
-    $end            reduce using rule 13 (func -> TABLE NAME .)
+    $end            reduce using rule 15 (func -> VENN NAME .)
 
 
 state 17
 
-    (5) expr -> NOT .
+    (1) assign -> NAME EQUALS . expr term
+    (3) expr -> . OR
+    (4) expr -> . AND
+    (5) expr -> . NOT
+    (6) expr -> . XNOR
+    (7) expr -> . XOR
+    (8) expr -> . NAND
+    (9) expr -> . NOR
+    (10) expr -> . BUFFER
 
-    NAME            reduce using rule 5 (expr -> NOT .)
+    OR              shift and go to state 20
+    AND             shift and go to state 26
+    NOT             shift and go to state 27
+    XNOR            shift and go to state 19
+    XOR             shift and go to state 24
+    NAND            shift and go to state 21
+    NOR             shift and go to state 22
+    BUFFER          shift and go to state 23
 
+    expr                           shift and go to state 25
 
 state 18
 
-    (10) expr -> BUFFER .
+    (14) func -> DEL NAME .
 
-    NAME            reduce using rule 10 (expr -> BUFFER .)
+    $end            reduce using rule 14 (func -> DEL NAME .)
 
 
 state 19
-
-    (9) expr -> NOR .
-
-    NAME            reduce using rule 9 (expr -> NOR .)
-
-
-state 20
-
-    (8) expr -> NAND .
-
-    NAME            reduce using rule 8 (expr -> NAND .)
-
-
-state 21
-
-    (3) expr -> OR .
-
-    NAME            reduce using rule 3 (expr -> OR .)
-
-
-state 22
-
-    (4) expr -> AND .
-
-    NAME            reduce using rule 4 (expr -> AND .)
-
-
-state 23
-
-    (7) expr -> XOR .
-
-    NAME            reduce using rule 7 (expr -> XOR .)
-
-
-state 24
-
-    (1) assign -> NAME EQUALS expr . term
-    (11) term -> . NAME term
-    (12) term -> . NAME
-
-    NAME            shift and go to state 27
-
-    term                           shift and go to state 26
-
-state 25
 
     (6) expr -> XNOR .
 
     NAME            reduce using rule 6 (expr -> XNOR .)
 
 
+state 20
+
+    (3) expr -> OR .
+
+    NAME            reduce using rule 3 (expr -> OR .)
+
+
+state 21
+
+    (8) expr -> NAND .
+
+    NAME            reduce using rule 8 (expr -> NAND .)
+
+
+state 22
+
+    (9) expr -> NOR .
+
+    NAME            reduce using rule 9 (expr -> NOR .)
+
+
+state 23
+
+    (10) expr -> BUFFER .
+
+    NAME            reduce using rule 10 (expr -> BUFFER .)
+
+
+state 24
+
+    (7) expr -> XOR .
+
+    NAME            reduce using rule 7 (expr -> XOR .)
+
+
+state 25
+
+    (1) assign -> NAME EQUALS expr . term
+    (11) term -> . NAME term
+    (12) term -> . NAME
+
+    NAME            shift and go to state 29
+
+    term                           shift and go to state 28
+
 state 26
+
+    (4) expr -> AND .
+
+    NAME            reduce using rule 4 (expr -> AND .)
+
+
+state 27
+
+    (5) expr -> NOT .
+
+    NAME            reduce using rule 5 (expr -> NOT .)
+
+
+state 28
 
     (1) assign -> NAME EQUALS expr term .
 
     $end            reduce using rule 1 (assign -> NAME EQUALS expr term .)
 
 
-state 27
+state 29
 
     (11) term -> NAME . term
     (12) term -> NAME .
@@ -286,11 +304,11 @@ state 27
     (12) term -> . NAME
 
     $end            reduce using rule 12 (term -> NAME .)
-    NAME            shift and go to state 27
+    NAME            shift and go to state 29
 
-    term                           shift and go to state 28
+    term                           shift and go to state 30
 
-state 28
+state 30
 
     (11) term -> NAME term .
 

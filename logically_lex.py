@@ -22,6 +22,7 @@ tokens = [
     'CKT',
     'DEL',
     'SIMPLIFY',
+    'DISPLAY',
     'HELP',
     'EXIT'
 ]
@@ -40,6 +41,7 @@ reserved = {
     'DEL' : 'DEL',
     'HELP': 'HELP',
     'SIMPLIFY': 'SIMPLIFY',
+    'DISPLAY':'DISPLAY',
     'EXIT': 'EXIT'
 }
 
