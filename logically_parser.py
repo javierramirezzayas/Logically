@@ -97,7 +97,7 @@ def p_func(p):
 
 
 def p_error(p):
-    print(p)
+    # print(p)
     print("Syntax error.")
 
 

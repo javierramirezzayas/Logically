@@ -27,10 +27,7 @@ def venn(be):
     set = be.split()
 
     for token in set:
-        if token != 'and' and token != 'or' and token != '(' and token != ')':
-            if "not" in token:
-                Letters.append(token[token.index('(') + 1])
-            else:
+        if token != 'and' and token != 'or' and token != '(' and token != ')' and token != 'not':
                 Letters.append(token)
 
     if len(Letters) == 1:
@@ -44,7 +41,8 @@ def venn(be):
         set3 = Letters[2]
 
     newString = constantExpression(be)
-    print ("NEW STRING" + newString)
+    print ("NEW STRING " + newString)
+
     vd = venn3(subsets={'111': 1, '001': 1, '010': 1, '011': 1, '100': 1, '101': 1, '110': 1},
                set_labels=(set1, set2, set3))
 
@@ -58,7 +56,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "( not a)"):
+    elif (newString == "( not a )"):
 
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('orange')
@@ -98,6 +96,15 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
+    elif (newString == "a or ( b and c )"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('orange')
+
     elif (newString == "(a or b) and ( not c)"):
 
         vd.get_patch_by_id('001').set_color('black')
@@ -119,7 +126,7 @@ def venn(be):
         vd.get_patch_by_id('111').set_color('orange')
 
 
-    elif (newString == "( not b)"):
+    elif (newString == "( not b )"):
 
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('black')
@@ -139,7 +146,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "( not c)"):
+    elif (newString == "( not c )"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -160,7 +167,6 @@ def venn(be):
         vd.get_patch_by_id('111').set_color('orange')
 
     elif (newString == "a and ( not b )"):
-        print(newString)
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('black')
@@ -169,7 +175,16 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(a and ( not b)) or (a and b)"):
+    elif (newString == "a or ( not b )"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(a and ( not b )) or (a and b)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -179,7 +194,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "( not a) and b"):
+    elif (newString == "( not a ) and b"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
@@ -189,7 +204,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b) or (a and b)"):
+    elif (newString == "(( not a ) and b) or (a and b)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
@@ -199,7 +214,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and b) or (a and ( not b))"):
+    elif (newString == "( ( not a ) and b) or ( a and ( not b))"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
@@ -210,7 +225,7 @@ def venn(be):
         vd.get_patch_by_id('111').set_color('black')
 
 
-    elif (newString == "( not a) and ( not b)"):
+    elif (newString == "( not a ) and ( not b )"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -220,7 +235,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b)) or (a and b)"):
+    elif (newString == "(( not a ) and ( not b )) or (a and b)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -230,7 +245,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and ( not b)) or (a and ( not b))"):
+    elif (newString == "(( not a ) and ( not b )) or (a and ( not b ))"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -240,7 +255,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b)) or ( not a and b)"):
+    elif (newString == "(( not a ) and ( not b )) or ( not a ) and b)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
@@ -260,7 +275,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "a and b and ( not c)"):
+    elif (newString == "a and b and ( not c )"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -270,7 +285,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(a and b and ( not c)) or (a and b and c)"):
+    elif (newString == "(a and b and ( not c )) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -280,7 +295,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "a and ( not b) and c"):
+    elif (newString == "a and ( not b ) and c"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -290,7 +305,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(a and ( not b) and c) or (a and b and c)"):
+    elif (newString == "(a and ( not b ) and c) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -330,7 +345,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(a and ( not b) and ( not c)) or (a and b and c)"):
+    elif (newString == "(a and ( not b ) and ( not c )) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -390,7 +405,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "( not a) and b and c"):
+    elif (newString == "( not a ) and b and c"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -400,7 +415,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and c) or (a and b and c)"):
+    elif (newString == "(( not a ) and b and c) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -410,7 +425,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and b and c) or (a and b and ( not c))"):
+    elif (newString == "(( not a ) and b and c) or (a and b and ( not c))"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -420,7 +435,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and c) or (a and b and ( not c)) or (a and b and c)"):
+    elif (newString == "(( not a ) and b and c) or (a and b and ( not c)) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -430,7 +445,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and c)"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -440,7 +455,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and c) or (a and b and c)"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and c) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -450,7 +465,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and c) or (a and b and ( not c))"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and c) or (a and b and ( not c))"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -460,7 +475,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and ( not c))"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and ( not c))"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -470,7 +485,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and ( not c)) or (a and b and c)"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and ( not c)) or (a and b and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -480,7 +495,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -490,7 +505,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and c) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
+    elif (newString == "(( not a ) and b and c) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
@@ -500,7 +515,7 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "( not a) and b and ( not c)"):
+    elif (newString == "( not a ) and b and ( not c)"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
@@ -510,496 +525,8 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and b and ( not c)) or (a and b and c)"):
+    elif (newString == "(( not a ) and b and ( not c)) or (a and b and c)"):
 
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and b and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and b and ( not c)) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and c) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and c) or (a and b and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and ( not c)) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (( not a) and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (( not a) and b and c) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and b and ( not c)) or (( not a) and b and c) or (a and ( not b) and c)"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and b and ( not c)) or (( not a) and b and c) or (a and ( not b) and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "( not a) and ( not b) and c"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and b and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and b and ( not c)) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and c)"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and c) or (a and b and c)"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and c) or (a and b and ( not c))"):
-
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and ( not c)) or (a and b and c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and c)"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and c) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and c) or (a and ( not b) and c)"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and c) or (a and ( not b) and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and ( not c)) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and ( not c)) or (a and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and ( not c)) or (a and ( not b) and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and ( not c)) or (a and ( not b) and c)"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and c) or (( not a) and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('orange')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "( not a) and ( not b) and ( not c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and b and ( not c)) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and c) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and c) or (a and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and ( not c)) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and c) or (a and b and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('orange')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and c) or (a and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('orange')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and c) or (a and ( not b) and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('orange')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and c) or (a and ( not b) and c)"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('black')
-        vd.get_patch_by_id('011').set_color('orange')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('orange')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and ( not c))"):
-        vd.get_patch_by_id('001').set_color('black')
-        vd.get_patch_by_id('010').set_color('orange')
-        vd.get_patch_by_id('011').set_color('black')
-        vd.get_patch_by_id('100').set_color('black')
-        vd.get_patch_by_id('101').set_color('black')
-        vd.get_patch_by_id('110').set_color('black')
-        vd.get_patch_by_id('111').set_color('black')
-
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and ( not c)) or (a and b and c)"):
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
         vd.get_patch_by_id('011').set_color('black')
@@ -1008,7 +535,8 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and ( not c)) or (a and b and ( not c))"):
+    elif (newString == "(( not a ) and b and ( not c)) or (a and b and ( not c))"):
+
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
         vd.get_patch_by_id('011').set_color('black')
@@ -1017,7 +545,48 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and ( not c)) or (a and ( not b) and ( not c))"):
+    elif (newString == "(( not a ) and b and ( not c)) or (a and b and ( not c)) or (a and b and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and c) or (a and b and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and c) or (a and b and ( not c))"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and ( not c))"):
+
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
         vd.get_patch_by_id('011').set_color('black')
@@ -1026,7 +595,38 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and b and ( not c)) or (( not a) and b and c)"):
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and ( not c)) or (a and b and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (( not a ) and b and c)"):
+
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
         vd.get_patch_by_id('011').set_color('orange')
@@ -1035,7 +635,38 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c)"):
+    elif (newString == "(( not a ) and b and ( not c)) or (( not a ) and b and c) or (a and b and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (( not a ) and b and c) or (a and ( not b) and c)"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and b and ( not c)) or (( not a ) and b and c) or (a and ( not b) and ( not c))"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "( not a ) and ( not b) and c"):
+
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('black')
@@ -1044,7 +675,8 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c) or (a and b and c)"):
+    elif (newString == "(( not a ) and ( not b) and c) or (a and b and c)"):
+
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('black')
@@ -1053,7 +685,8 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c) or (a and b and ( not c))"):
+    elif (newString == "(( not a ) and ( not b) and c) or (a and b and ( not c))"):
+
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('black')
@@ -1062,7 +695,18 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c) or (a and ( not b) and c)"):
+    elif (newString == "(( not a ) and ( not b) and c) or (a and b and ( not c)) or (a and b and c)"):
+
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and c)"):
+
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('black')
@@ -1071,7 +715,27 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c) or (a and ( not b) and ( not c))"):
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and c) or (a and b and c)"):
+
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and c) or (a and b and ( not c))"):
+
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and ( not c))"):
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('black')
@@ -1080,7 +744,232 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c) or (( not a) and b and c)"):
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and ( not c)) or (a and b and c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and c) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and c) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and c) or (a and ( not b) and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and ( not c)) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and ( not c)) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and ( not c)) or (a and ( not b) and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and ( not c)) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and c) or (( not a ) and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "( not a ) and ( not b) and ( not c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and b and ( not c)) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and c) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and c) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and ( not c)) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and ( not c)) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (a and ( not b) and ( not c)) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and c) or (a and b and c)"):
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('black')
         vd.get_patch_by_id('011').set_color('orange')
@@ -1089,7 +978,133 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('orange')
 
-    elif (newString == "(( not a) and ( not b) and ( not c)) or (( not a) and ( not b) and c) or (( not a) and b and ( not c))"):
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and c) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and c) or (a and ( not b) and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and c) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and ( not c)) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and ( not c)) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and ( not c)) or (a and ( not b) and ( not c))"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and b and ( not c)) or (( not a ) and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c) or (a and b and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c) or (a and b and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c) or (a and ( not b) and c)"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c) or (a and ( not b) and ( not c))"):
+        vd.get_patch_by_id('001').set_color('orange')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('black')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('black')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c) or (( not a ) and b and c)"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('black')
+        vd.get_patch_by_id('101').set_color('black')
+        vd.get_patch_by_id('110').set_color('black')
+        vd.get_patch_by_id('111').set_color('orange')
+
+    elif (newString == "(( not a ) and ( not b) and ( not c)) or (( not a ) and ( not b) and c) or (( not a ) and b and ( not c))"):
         vd.get_patch_by_id('001').set_color('orange')
         vd.get_patch_by_id('010').set_color('orange')
         vd.get_patch_by_id('011').set_color('black')
@@ -1097,6 +1112,9 @@ def venn(be):
         vd.get_patch_by_id('101').set_color('black')
         vd.get_patch_by_id('110').set_color('black')
         vd.get_patch_by_id('111').set_color('black')
+
+    else:
+        print("Unable to draw expression.")
 
     plt.title("Venn Diagram: " + be, fontsize=14)
     plt.show()

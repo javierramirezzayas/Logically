@@ -50,14 +50,20 @@ def generate_circuit(env):
     except Exception:
         return
 
+
 def generate_venn(env):
     print("Generating venn diagram")
-    try:
-        expression = conv.env_to_expr(env)
-        print(str(expression))
-        venn.venn(expression)
-    except Exception:
+    expr = conv.env_to_expr(env)
+    if len(conv.extract_variables(expr)) > 3:
+        print("Expression can't have more than 3 variables.")
         return
+    else:
+        try:
+            expression = conv.env_to_expr(env)
+            print(str(expression))
+            venn.venn(expression)
+        except Exception:
+            return
 
 def generate_display(env):
     print("Displaying expression:")
