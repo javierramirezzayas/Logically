@@ -54,12 +54,12 @@ def replace_negations(expr):
 
 
 # Function to generate the truth table of the logical function
-def generate_table(expr):
+def generate_table(expr, name):
     vars = extract_variables(expr)
     NO_GLOBALS = {'__builtins__': {}}
 
-    # Print header
-    print('\t'.join(vars + [expr]))
+    print(expr)
+    print('\t'.join(vars + [name]))
 
     # Print body
     for vals in product(range(2), repeat=len(vars)):
@@ -68,6 +68,7 @@ def generate_table(expr):
         print('\t'.join([str(v) for v in vals] + [str(result)]))
 
 
+# Returns the minterms of one expression to simplify it.
 def get_minterms(expr):
     vars = extract_variables(expr)
     NO_GLOBALS = {'__builtins__': {}}
@@ -78,6 +79,7 @@ def get_minterms(expr):
     return vars, minterms
 
 
+# Converts the current tree to a list of expressions
 def tree_to_string(env):
     expr_list = [list()]
     expr = [str(env[0])]
@@ -96,7 +98,7 @@ def tree_to_string(env):
     return expr_list
 
 
-# Function to convert the current environment into one equivalent logical expression.
+# Function to convert the current group of expressions into one equivalent logical expression.
 def env_to_expr(env):
     expression_list = tree_to_string(env)
     expression = replace_negations(expression_list[0][1])

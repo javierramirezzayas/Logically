@@ -1,7 +1,7 @@
 import sys
 import expression_converter as conv
 import logic_gates_drawer as lgd
-import VennComplete as venn
+import venn_drawer as venn
 import simplify as simp
 
 
@@ -25,9 +25,9 @@ def function_parser(func, expression=None):
 
 
 def generate_table(env):
-    print("The truth table is: ")
+    print("Generating truth table:\n")
     expression = conv.env_to_expr(env)
-    conv.generate_table(expression)
+    conv.generate_table(expression, env[0])
 
 
 def simplify_expression(env):
@@ -38,7 +38,6 @@ def simplify_expression(env):
     print(str(variables))
     print(str(minterms))
     simp.start(minterms, variables)
-
 
 
 def generate_circuit(env):
@@ -64,6 +63,7 @@ def generate_venn(env):
             venn.venn(expression)
         except Exception:
             return
+
 
 def generate_display(env):
     print("Displaying expression:")

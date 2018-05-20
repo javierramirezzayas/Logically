@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'AND BUFFER CKT DEL DISPLAY EQUALS EXIT HELP NAME NAND NOR NOT OR SIMPLIFY TABLE VENN XNOR XOR\n    assign : NAME EQUALS expr term\n           | func\n    \n    expr : OR\n         | AND\n         | NOT\n         | XNOR\n         | XOR\n         | NAND\n         | NOR\n         | BUFFER\n     \n    term : NAME term\n         | NAME\n    \n    func : TABLE NAME\n         | DEL NAME\n         | VENN NAME\n         | CKT NAME\n         | SIMPLIFY NAME\n         | DISPLAY NAME\n         | HELP\n         | EXIT\n    '
+_lr_signature = 'AND BUFFER CKT DEL DISPLAY EQUALS EXIT FILENAME HELP LOAD NAME NAND NOR NOT OR SIMPLIFY TABLE VENN XNOR XOR\n    assign : NAME EQUALS expr term\n           | func\n    \n    expr : OR\n         | AND\n         | NOT\n         | XNOR\n         | XOR\n         | NAND\n         | NOR\n         | BUFFER\n     \n    term : NAME term\n         | NAME\n    \n    func : TABLE NAME\n         | DEL NAME\n         | VENN NAME\n         | CKT NAME\n         | SIMPLIFY NAME\n         | DISPLAY NAME\n         | LOAD FILENAME\n         | HELP\n         | EXIT\n    '
     
-_lr_action_items = {'$end':([1,4,5,10,12,13,14,15,16,18,28,29,30,],[-19,0,-2,-20,-13,-18,-16,-17,-15,-14,-1,-12,-11,]),'XNOR':([17,],[19,]),'HELP':([0,],[1,]),'TABLE':([0,],[2,]),'OR':([17,],[20,]),'DISPLAY':([0,],[3,]),'NAND':([17,],[21,]),'EQUALS':([9,],[17,]),'AND':([17,],[26,]),'BUFFER':([17,],[23,]),'NOR':([17,],[22,]),'CKT':([0,],[6,]),'SIMPLIFY':([0,],[7,]),'XOR':([17,],[24,]),'VENN':([0,],[8,]),'NOT':([17,],[27,]),'NAME':([0,2,3,6,7,8,11,19,20,21,22,23,24,25,26,27,29,],[9,12,13,14,15,16,18,-6,-3,-8,-9,-10,-7,29,-4,-5,29,]),'EXIT':([0,],[10,]),'DEL':([0,],[11,]),}
+_lr_action_items = {'FILENAME':([4,],[16,]),'BUFFER':([20,],[21,]),'DISPLAY':([0,],[1,]),'DEL':([0,],[2,]),'CKT':([0,],[3,]),'NOT':([20,],[25,]),'$end':([6,8,9,10,13,14,15,16,17,18,19,30,31,32,],[0,-21,-20,-2,-18,-14,-16,-19,-15,-17,-13,-1,-12,-11,]),'AND':([20,],[22,]),'XNOR':([20,],[29,]),'LOAD':([0,],[4,]),'VENN':([0,],[5,]),'NOR':([20,],[23,]),'SIMPLIFY':([0,],[7,]),'EQUALS':([12,],[20,]),'NAND':([20,],[26,]),'EXIT':([0,],[8,]),'OR':([20,],[28,]),'HELP':([0,],[9,]),'XOR':([20,],[24,]),'TABLE':([0,],[11,]),'NAME':([0,1,2,3,5,7,11,21,22,23,24,25,26,27,28,29,31,],[12,13,14,15,17,18,19,-10,-4,-9,-7,-5,-8,31,-3,-6,31,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'assign':([0,],[4,]),'term':([25,29,],[28,30,]),'func':([0,],[5,]),'expr':([17,],[25,]),}
+_lr_goto_items = {'assign':([0,],[6,]),'expr':([20,],[27,]),'func':([0,],[10,]),'term':([27,31,],[30,32,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,24 +27,25 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> assign","S'",1,None,None,None),
-  ('assign -> NAME EQUALS expr term','assign',4,'p_assign','logically_parser.py',13),
-  ('assign -> func','assign',1,'p_assign','logically_parser.py',14),
-  ('expr -> OR','expr',1,'p_expr','logically_parser.py',40),
-  ('expr -> AND','expr',1,'p_expr','logically_parser.py',41),
-  ('expr -> NOT','expr',1,'p_expr','logically_parser.py',42),
-  ('expr -> XNOR','expr',1,'p_expr','logically_parser.py',43),
-  ('expr -> XOR','expr',1,'p_expr','logically_parser.py',44),
-  ('expr -> NAND','expr',1,'p_expr','logically_parser.py',45),
-  ('expr -> NOR','expr',1,'p_expr','logically_parser.py',46),
-  ('expr -> BUFFER','expr',1,'p_expr','logically_parser.py',47),
-  ('term -> NAME term','term',2,'p_term','logically_parser.py',54),
-  ('term -> NAME','term',1,'p_term','logically_parser.py',55),
-  ('func -> TABLE NAME','func',2,'p_func','logically_parser.py',66),
-  ('func -> DEL NAME','func',2,'p_func','logically_parser.py',67),
-  ('func -> VENN NAME','func',2,'p_func','logically_parser.py',68),
-  ('func -> CKT NAME','func',2,'p_func','logically_parser.py',69),
-  ('func -> SIMPLIFY NAME','func',2,'p_func','logically_parser.py',70),
-  ('func -> DISPLAY NAME','func',2,'p_func','logically_parser.py',71),
-  ('func -> HELP','func',1,'p_func','logically_parser.py',72),
-  ('func -> EXIT','func',1,'p_func','logically_parser.py',73),
+  ('assign -> NAME EQUALS expr term','assign',4,'p_assign','logically_parser.py',12),
+  ('assign -> func','assign',1,'p_assign','logically_parser.py',13),
+  ('expr -> OR','expr',1,'p_expr','logically_parser.py',44),
+  ('expr -> AND','expr',1,'p_expr','logically_parser.py',45),
+  ('expr -> NOT','expr',1,'p_expr','logically_parser.py',46),
+  ('expr -> XNOR','expr',1,'p_expr','logically_parser.py',47),
+  ('expr -> XOR','expr',1,'p_expr','logically_parser.py',48),
+  ('expr -> NAND','expr',1,'p_expr','logically_parser.py',49),
+  ('expr -> NOR','expr',1,'p_expr','logically_parser.py',50),
+  ('expr -> BUFFER','expr',1,'p_expr','logically_parser.py',51),
+  ('term -> NAME term','term',2,'p_term','logically_parser.py',58),
+  ('term -> NAME','term',1,'p_term','logically_parser.py',59),
+  ('func -> TABLE NAME','func',2,'p_func','logically_parser.py',70),
+  ('func -> DEL NAME','func',2,'p_func','logically_parser.py',71),
+  ('func -> VENN NAME','func',2,'p_func','logically_parser.py',72),
+  ('func -> CKT NAME','func',2,'p_func','logically_parser.py',73),
+  ('func -> SIMPLIFY NAME','func',2,'p_func','logically_parser.py',74),
+  ('func -> DISPLAY NAME','func',2,'p_func','logically_parser.py',75),
+  ('func -> LOAD FILENAME','func',2,'p_func','logically_parser.py',76),
+  ('func -> HELP','func',1,'p_func','logically_parser.py',77),
+  ('func -> EXIT','func',1,'p_func','logically_parser.py',78),
 ]
