@@ -113,7 +113,7 @@ def firstStep(minterms):
         ##group = group+
     if(len(mins[len(mins)-1])==0):
         del(mins[len(mins)-1])
-        del(matchedPair[group])
+        del(matchedPair[len(mins)-1])
     # print "First Step"
     # print"minterms:"
     # print mins
