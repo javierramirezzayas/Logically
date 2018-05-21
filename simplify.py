@@ -1,6 +1,7 @@
 
 # Begins the simplification process
 def start(minterms, variables):
+    getVariables(variables)
     result = decimalToBinary(minterms, len(variables))
     table = firstStep(result)
     constructDictionary(table)
@@ -106,9 +107,13 @@ def firstStep(minterms):
                     ##print list1
         if (len(mins[group]) != 0):
             group = group + 1
+        #print "group",group
         ##print(mins)
         ##print ("element: "+minterms[x])
         ##group = group+
+    if(len(mins[len(mins)-1])==0):
+        del(mins[len(mins)-1])
+        del(matchedPair[group])
     # print "First Step"
     # print"minterms:"
     # print mins
@@ -137,23 +142,23 @@ def firstStep(minterms):
 # mInv = Minterms Involved
 # def secondStep(mPair,cPair,ucPair):
 def secondStep(minterms, cPair, ucPair, groupedMinterms, strCPair, strUcPair):
-    # print ("###############")
-    # print ("# Second Step #")
-    # print ("###############")
-    # print "Second Step"
-    # print"minterms/mPair:"
-    # print minterms
-    # print "grouped minterms/mInv"
-    # print groupedMinterms
-    # print "checked:"
-    # print cPair
-    # print "unchecked"
-    # print ucPair
-    # print "Str checked:"
-    # print strCPair
-    # print "Str unchecked"
-    # print strUcPair
-    # print
+    #print ("###############")
+    #print ("# Second Step #")
+    #print ("###############")
+    #print "Second Step"
+    #print"minterms/mPair:"
+    #print minterms
+    #print "grouped minterms/mInv"
+    #print groupedMinterms
+    #print "checked:"
+    #print cPair
+    #print "unchecked"
+    #print ucPair
+    #print "Str checked:"
+    #print strCPair
+    #print "Str unchecked"
+    #print strUcPair
+    #print
 
     key = 0
     minPair = {}
@@ -201,6 +206,7 @@ def secondStep(minterms, cPair, ucPair, groupedMinterms, strCPair, strUcPair):
             ucPair.append(minterms[0][0])
             # print"Hello",groupedMinterms[0][0]
             strUcPair.append(groupedMinterms[0][0])
+           # print len(minterms[0])
 
             while (pointer3 < len(minterms[0]) - 1):
                 if (minterms[0][pointer3] != minterms[0][pointer3 + 1]):
@@ -211,6 +217,11 @@ def secondStep(minterms, cPair, ucPair, groupedMinterms, strCPair, strUcPair):
                 if (groupedMinterms[0][gPointer] != groupedMinterms[0][gPointer + 1]):
                     strUcPair.append(groupedMinterms[0][gPointer + 1])
                 gPointer += 1
+            if(len(minterms[0])==2):
+                 if (minterms[0][0] != minterms[0][1]):
+                    ucPair.append(minterms[0][1])
+                 if (groupedMinterms[0][0] != groupedMinterms[0][1]):
+                    strUcPair.append(groupedMinterms[0][1])
 
         removeChecked(cPair, ucPair)
         removeChecked(strCPair, strUcPair)
@@ -437,20 +448,14 @@ import re
 # ============================================================================== #
 Letters = {
 
-    0: "a",
-    1: "b",
-    2: "c",
-    3: "d",
-    4: "e",
-    5: "f",
-    6: "g",
-    7: "h",
-    8: "i",
-    9: "j",
-    10: "k"
-
 }
 
+def getVariables(variables):
+    array = []
+    for var in variables:
+        if var not in array:
+            array.append(var)
+            Letters[len(array) - 1] = var
 # ============================================================================== #
 #                                  METHODS                                       #
 # ============================================================================== #
