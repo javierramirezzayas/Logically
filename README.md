@@ -26,5 +26,9 @@ These combinational logic circuits can range from very simple ones to very compl
   * SchemDraw
   * Matplotlib
   * TKinter
- * After downloading the code open a terminal and run logically_parser.py
+  * PLY
+ ##### Instructions
+ * Download the prrogram to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
+ * After downloading the code open a terminal and run logically.py
+ * Enjoy logically
   
