@@ -36,18 +36,19 @@ def determineGate(s, first, inputs, lgatetype, out_lbl, lsfactor, lginput_xy):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3)
             elif all(isinstance(x, str) for x in inputs):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in1=inputs[0], in2=inputs[1], in3=inputs[2])
-            elif isinstance(inputs[0], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in3=inputs[0])
-            elif isinstance(inputs[1], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in2=inputs[1])
-            elif isinstance(inputs[2], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in2=inputs[2])
             elif isinstance(inputs[0], str) and isinstance(inputs[1], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in3=inputs[0], in2=inputs[1])
             elif isinstance(inputs[1], str) and isinstance(inputs[2], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in2=inputs[1], in1=inputs[2])
             elif isinstance(inputs[0], str) and isinstance(inputs[2], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in3=inputs[0], in1=inputs[2])
+            elif isinstance(inputs[0], str):
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in3=inputs[0])
+            elif isinstance(inputs[1], str):
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in2=inputs[1])
+            elif isinstance(inputs[2], str):
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, False, 0, in_qty=3, in2=inputs[2])
+
     else:
         if len(inputs) == 2:
             if all(isinstance(x, list) for x in inputs):
@@ -63,18 +64,19 @@ def determineGate(s, first, inputs, lgatetype, out_lbl, lsfactor, lginput_xy):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, True, lginput_xy, in_qty=3)
             elif all(isinstance(x, str) for x in inputs):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in1=inputs[0], in2=inputs[1], in3=inputs[2])
-            elif isinstance(inputs[0], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in3=inputs[0])
-            elif isinstance(inputs[1], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in2=inputs[1])
-            elif isinstance(inputs[2], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in2=inputs[2])
             elif isinstance(inputs[0], str) and isinstance(inputs[1], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in3=inputs[0], in2=inputs[1])
             elif isinstance(inputs[1], str) and isinstance(inputs[2], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in2=inputs[1], in1=inputs[2])
             elif isinstance(inputs[0], str) and isinstance(inputs[2], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in3=inputs[0], in1=inputs[2])
+            elif isinstance(inputs[0], str):
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in3=inputs[0])
+            elif isinstance(inputs[1], str):
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in2=inputs[1])
+            elif isinstance(inputs[2], str):
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, 0, in_qty=3, in2=inputs[2])
+
 
 
 def determineGateType(s, gate, out_label,depth, reverse, connectTo, in_qty=2, in1='', in2='', in3=''):
@@ -115,18 +117,3 @@ def determineGateType(s, gate, out_label,depth, reverse, connectTo, in_qty=2, in
 
 def drawSchematic(s):
     s.drawSchematic()
-
-
-# # dummy_list = ['out', 'XOR', [['A', 'NOR', [['C', 'AND', ['E', 'F']], ['D', 'OR', ['G', 'H']]]], 'B']]
-# # dummy_list = ['out', 'AND', [['b', 'OR', ['e', ['f', 'XOR', ['g', 'h']]]], ['c', 'NAND', ['i', 'j']]]]
-# # some_list = [['x', 'XOR', ['a', 'b', 'c']]]
-# # dummy_list = some_list[0]
-# dummy_list = [['out', 'XOR', ['a', ['b', 'OR', ['a', 'b']], 'c']]]
-#
-#
-#
-# s = initDrawSchematic()
-#
-# rec_draw(dummy_list)
-#
-# s.drawSchematic()
