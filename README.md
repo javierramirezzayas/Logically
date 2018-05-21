@@ -23,11 +23,11 @@ These combinational logic circuits can range from very simple ones to very compl
 
 ### Example Program
 '''
- >>out = XOR a b
+ \>>out = XOR a b
  Added Expression to:  out
- >>b = AND c d
+ \>>b = AND c d
  Added Expression to:  out
- >>TABLE out
+ \>>TABLE out
  The truth table is: 
  a	c	d	a ^ ( c and d )
  0	0	0	0
