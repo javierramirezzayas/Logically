@@ -20,6 +20,26 @@ These combinational logic circuits can range from very simple ones to very compl
 * Generate visual circuit diagrams from generated circuits.
 * Display the Venn Diagram of a given logical expression.
 
+
+### Example Program
+'''
+>>out = XOR a b
+Added Expression to:  out
+>>b = AND c d
+Added Expression to:  out
+>>TABLE out
+The truth table is: 
+a	c	d	a ^ ( c and d )
+0	0	0	0
+0	0	1	0
+0	1	0	0
+0	1	1	1
+1	0	0	1
+1	0	1	1
+1	1	0	1
+1	1	1	0
+'''
+
 ### Installation
 ##### Dependencies
 * Python 3.4 with the following packages:
