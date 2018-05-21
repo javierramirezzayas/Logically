@@ -43,7 +43,6 @@ def venn(be):
         set1 = Letters[0]
         set2 = Letters[1]
         vd = venn2(subsets={'10':1, '11':1, '01':1}, set_labels=(set1, set2))
-        print("HERE")
     elif len(Letters) == 3:
         set1 = Letters[0]
         set2 = Letters[1]
@@ -52,7 +51,6 @@ def venn(be):
                    set_labels=(set1, set2, set3))
 
     newString = constantExpression(be)
-    print(newString)
 
     if (newString == "a"):
 
@@ -95,7 +93,7 @@ def venn(be):
         vd.get_label_by_id('01').set_text('')
         vd.get_label_by_id('11').set_text('')
 
-    elif (newString == "a or b and ( not c )"):
+    elif (newString == "( a or b ) and ( not c )"):
 
         vd.get_patch_by_id('001').set_color('black')
         vd.get_patch_by_id('010').set_color('orange')
@@ -105,6 +103,16 @@ def venn(be):
         vd.get_patch_by_id('110').set_color('orange')
         vd.get_patch_by_id('111').set_color('black')
 
+    elif (newString == "( a or b ) or ( not c )"):
+
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('orange')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('orange')
+
     elif (newString == "a and b"):
 
         vd.get_patch_by_id('10').set_color('black')
@@ -113,6 +121,15 @@ def venn(be):
         vd.get_label_by_id('10').set_text('')
         vd.get_label_by_id('01').set_text('')
         vd.get_label_by_id('11').set_text('')
+
+    elif (newString == "a or ( b and c )"):
+        vd.get_patch_by_id('001').set_color('black')
+        vd.get_patch_by_id('010').set_color('black')
+        vd.get_patch_by_id('011').set_color('orange')
+        vd.get_patch_by_id('100').set_color('orange')
+        vd.get_patch_by_id('101').set_color('orange')
+        vd.get_patch_by_id('110').set_color('orange')
+        vd.get_patch_by_id('111').set_color('orange')
 
     elif (newString == "a and ( not b )"):
 
