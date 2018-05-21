@@ -34,8 +34,6 @@ def p_assign(p):
             forest.append(p[0])
             cnt = len(forest) - 1
         # Feedback where is the input located
-        # print(count)
-        # print(forest)
         print("Added Expression to: ", forest[cnt][0])
 
 
@@ -73,25 +71,11 @@ def p_func(p):
          | CKT NAME
          | SIMPLIFY NAME
          | DISPLAY NAME
-         | LOAD FILENAME
          | HELP
          | EXIT
     '''
     if str(p[1]) == "HELP" or str(p[1]) == "EXIT":
         function_helper.function_parser(p[1])
-    elif str(p[1]) == "LOAD":
-        print("Loading " + str(p[2]))
-        try:
-            file = open(p[2], 'r')
-            line = file.readline()
-            while line:
-                if '//' not in line and len(line.strip()) > 1:
-                    do_parse(line.strip())
-                line = file.readline()
-        except Exception:
-            print("No such file found")
-            return
-
     else:
         expression = get_node(str(p[2]))
         if expression is None:
@@ -216,12 +200,3 @@ def do_parse(s):
 
 
 parser = yacc.yacc()
-print("Welcome to logically")
-print("(pre-alpha) ver. 1.0.0")
-print("")
-while True:
-    try:
-        s = input('>>')
-    except EOFError:
-        break
-    do_parse(s)

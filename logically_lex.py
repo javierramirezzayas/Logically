@@ -22,8 +22,6 @@ tokens = [
     'CKT',
     'DEL',
     'SIMPLIFY',
-    'LOAD',
-    'FILENAME',
     'DISPLAY',
     'HELP',
     'EXIT'
@@ -41,7 +39,6 @@ reserved = {
     'VENN': 'VENN',
     'CKT': 'CKT',
     'DEL': 'DEL',
-    'LOAD': 'LOAD',
     'HELP': 'HELP',
     'SIMPLIFY': 'SIMPLIFY',
     'DISPLAY': 'DISPLAY',
@@ -50,15 +47,6 @@ reserved = {
 
 t_EQUALS = r'\='
 t_ignore = r' '
-
-
-def t_FILENAME(t):
-    r'[a-zA-Z0-9_]*[".lly"]+'
-    if t.value in reserved:
-        t.type = reserved[t.value]
-    else:
-        t.type = 'FILENAME'
-    return t
 
 
 def t_NAME(t):
