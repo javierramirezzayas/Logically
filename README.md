@@ -22,7 +22,7 @@ These combinational logic circuits can range from very simple ones to very compl
 
 
 ### Example Program
-'''
+```
  \>>out = XOR a b
  
  Added Expression to:  out
@@ -52,7 +52,7 @@ These combinational logic circuits can range from very simple ones to very compl
  1	1	0	1
  
  1	1	1	0
-'''
+```
 
 ### Installation
 ##### Dependencies
