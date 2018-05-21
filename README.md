@@ -47,7 +47,7 @@ These combinational logic circuits can range from very simple ones to very compl
   * Matplotlib
   * TKinter
   * PLY
- ##### Instructions
+##### Instructions
  * Download the prrogram to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
  * After downloading the code open a terminal and run logically.py
  * Enjoy logically
