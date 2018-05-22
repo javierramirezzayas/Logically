@@ -43,4 +43,6 @@ while True:
         s = input('>>')
     except EOFError:
         break
+    print("")
     parser.do_parse(s)
+    print("")
