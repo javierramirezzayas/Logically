@@ -33,6 +33,11 @@ logically.py filename.lly  - reads a file named \"filename\" and executes it.
     print("")
     read_file(sys.argv[1])
 
+else:
+    print("Welcome to logically")
+    print("(pre-alpha) ver. 1.0.0")
+    print("")
+
 while True:
     try:
         s = input('>>')

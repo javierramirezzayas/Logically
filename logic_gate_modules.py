@@ -31,7 +31,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="up", xy=S.in3, l=(self.d.unit * depth * 1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l6.end, l2.end, l4.end]
         else:
@@ -40,7 +39,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="down", xy=S.in3, l=(self.d.unit * depth *1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l4.end, l2.end, l6.end]
 
@@ -67,7 +65,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="up", xy=S.in3, l=(self.d.unit * depth * 1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l6.end, l2.end, l4.end]
         else:
@@ -76,7 +73,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="down", xy=S.in3, l=(self.d.unit * depth *1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l4.end, l2.end, l6.end]
 
@@ -103,7 +99,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="up", xy=S.in3, l=(self.d.unit * depth * 1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l6.end, l2.end, l4.end]
         else:
@@ -112,7 +107,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="down", xy=S.in3, l=(self.d.unit * depth *1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l4.end, l2.end, l6.end]
 
@@ -139,7 +133,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="up", xy=S.in3, l=(self.d.unit * depth * 1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l6.end, l2.end, l4.end]
         else:
@@ -148,7 +141,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="down", xy=S.in3, l=(self.d.unit * depth *1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l4.end, l2.end, l6.end]
 
@@ -175,7 +167,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="up", xy=S.in3, l=(self.d.unit * depth * 1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l6.end, l2.end, l4.end]
         else:
@@ -184,7 +175,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="down", xy=S.in3, l=(self.d.unit * depth *1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l4.end, l2.end, l6.end]
 
@@ -211,7 +201,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="up", xy=S.in3, l=(self.d.unit * depth * 1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l6.end, l2.end, l4.end]
         else:
@@ -220,7 +209,6 @@ class logicGateModules:
             l2 = self.d.add(e.LINE, d="left", xy=S.in2, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l3 = self.d.add(e.LINE, d="down", xy=S.in3, l=(self.d.unit * depth *1.75))
             l4 = self.d.add(e.LINE, d="left", xy=l1.end, l=(self.d.unit * depth), lftlabel=in1_lbl)
-            # l5 = self.d.add(e.LINE, d="left", xy=l2.end, l=(self.d.unit * depth), lftlabel=in2_lbl)
             l6 = self.d.add(e.LINE, d="left", xy=l3.end, l=(self.d.unit * depth), lftlabel=in3_lbl)
             return [l4.end, l2.end, l6.end]
 
