@@ -84,7 +84,7 @@ def determineGate(s, first, inputs, lgatetype, out_lbl, lsfactor, lginput_xy):
             elif isinstance(inputs[1], str):
                 return determineGateType(s, lgatetype, out_lbl, lsfactor, True, lginput_xy, in_qty=3, in2=inputs[1])
             elif isinstance(inputs[2], str):
-                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, lginput_xy, in_qty=3, in2=inputs[2])
+                return determineGateType(s, lgatetype, out_lbl, lsfactor, True, lginput_xy, in_qty=3, in1=inputs[2])
 
 
 
