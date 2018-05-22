@@ -22,6 +22,10 @@ def p_assign(p):
             forest.append(p[0])
             count = 1
         else:  # Check existing trees to see if one has the expression as an input.
+            for tree in forest:
+                if tree[0] == p[1]:
+                    print(str(p[1]) + " is already declared.")
+                    return
             cnt = 0
             for i in range(len(forest)):
                 forest[i], check = add_node(forest[i], p[0])
