@@ -79,7 +79,7 @@ def p_func(p):
          | EXIT
     '''
     if str(p[1]) == "HELP" or str(p[1]) == "EXIT":
-        function_helper.function_parser(p[1])
+        function_run.function_parser(p[1])
     else:
         expression = get_node(str(p[2]))
         if expression is None:
@@ -94,7 +94,7 @@ def p_func(p):
                 temp = None
                 global forest
             else:
-                function_helper.function_parser(p[1], expression)
+                function_run.function_parser(p[1], expression)
 
 
 def p_error(p):
