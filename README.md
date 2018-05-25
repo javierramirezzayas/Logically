@@ -45,9 +45,8 @@ d	e	out
 1	1	0
 >>CKT out
 Generating circuit diagram
-<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.JPG" width="400" height="400"></center>
 ```
-
+![Output for CKT out]<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.JPG" width="400" height="400"></center>
 
 ##### Example 2: Testing the Simplify
 ```
@@ -78,7 +77,7 @@ Added Expression to:  exp
 Generating venn diagram
 a or ( a and b )
 ```
-<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG" width="400" height="400"></center>
+![Output for VENN exp]<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG" width="400" height="400"></center>
 
 ### Installation
 ##### Dependencies
