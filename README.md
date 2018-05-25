@@ -46,7 +46,10 @@ d	e	out
 >>CKT out
 Generating circuit diagram
 ```
-![Output for CKT out]<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.JPG" width="400" height="400"></center>
+<p>
+<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.JPG" width="400" height="400"></center>
+Output for CKT out
+</p>
 
 ##### Example 2: Testing the Simplify
 ```
@@ -79,7 +82,7 @@ a or ( a and b )
 ```
 <p>
 <center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG" width="400" height="400"></center>
-Output for CKT out
+Output for VENN out
 </p>
 
 ### Installation
