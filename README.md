@@ -77,7 +77,10 @@ Added Expression to:  exp
 Generating venn diagram
 a or ( a and b )
 ```
-![Output for VENN exp]<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG" width="400" height="400"></center>
+<p>
+<center><img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG" width="400" height="400"></center>
+Output for CKT out
+</p>
 
 ### Installation
 ##### Dependencies
