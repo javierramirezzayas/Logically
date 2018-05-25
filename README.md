@@ -76,7 +76,7 @@ Added Expression to:  exp
 Generating venn diagram
 a or ( a and b )
 ```
-![Figure of Venn Diagram](https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG){:height="700px" width="400px"}
+![Figure of Venn Diagram](https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.JPG){:height="700px" width="400px"]
 
 ### Installation
 ##### Dependencies
