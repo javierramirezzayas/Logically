@@ -90,6 +90,7 @@ a or ( a and b )
 ### Installation
 ----
 ##### Dependencies
+
 * Python 3.4 with the following packages:
   * SchemDraw
   * Matplotlib
@@ -97,6 +98,7 @@ a or ( a and b )
   * PLY
  
  ##### Instructions
+ 
  * Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
  * After downloading the code open a terminal and run ```python logically.py```
  * Enjoy logically
