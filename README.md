@@ -46,7 +46,8 @@ d	e	out
 >>CKT out
 Generating circuit diagram
 ```
-<img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.JPG" width="100" height="100">
+<img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.JPG" width="300" height="300" align="middle">
+
 ##### Example 2: Testing the Simplify
 ```
 >>out = AND x y z
