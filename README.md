@@ -21,24 +21,62 @@ These combinational logic circuits can range from very simple ones to very compl
 * Display the Venn Diagram of a given logical expression.
 
 
-### Example Program
+### Program Examples
+##### Example 1: Expression Build, Table Generation and Circuit Drawing
 ```
- >>out = XOR a b
- Added Expression to:  out
- >>b = AND c d
- Added Expression to:  out
- >>TABLE out
- The truth table is: 
- a	c	d	a ^ ( c and d )
- 0	0	0	0
- 0	0	1	0
- 0	1	0	0
- 0	1	1	1
- 1	0	0	1
- 1	0	1	1
- 1	1	0	1
- 1	1	1	0
+>>out = OR a b
+Added Expression to:  out
+>>a = AND c d 
+Added Expression to:  out
+>>c = NOT e
+Added Expression to:  out
+>>b = AND f e
+Added Expression to:  out
+>>f = NOT d
+Added Expression to:  out
+>>TABLE out
+Generating truth table:
+
+( ( not e ) and d ) or ( e and ( not d ) )
+d	e	out
+0	0	0
+0	1	1
+1	0	1
+1	1	0
+>>CKT out
+Generating circuit diagram
 ```
+![Figure of Circuit] (logicallyCKT.PNG)
+##### Example 2: Testing the Simplify
+```
+>>out = AND x y z
+Added Expression to:  out
+>>x = AND b c
+Added Expression to:  out
+>>y = AND c d
+Added Expression to:  out
+>>z = OR c d
+Added Expression to:  out
+>>SIMPLIFY out
+Simplifying out
+( b and c ) and ( c and d ) and ( c or d )
+['b', 'c', 'd']
+[0, 0, 0, 0, 0, 0, 0, 1]
+Result: 
+ bcd
+```
+
+##### Example 3: Testing Venn Diagrams
+```
+>>exp = OR a x
+Added Expression to:  exp
+>>x = AND a b
+Added Expression to:  exp
+>>VENN exp
+Generating venn diagram
+a or ( a and b )
+```
+![Figure of Venn Diagram] (logicallyVENN.PNG)
 
 ### Installation
 ##### Dependencies
