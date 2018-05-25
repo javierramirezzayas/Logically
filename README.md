@@ -47,7 +47,7 @@ d	e	out
 Generating circuit diagram
 ```
 <p align="center">
-  <img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/blob/master/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
 
 ##### Example 2: Testing the Simplify
 ```
@@ -79,7 +79,7 @@ Generating venn diagram
 a or ( a and b )
 ```
 <p align="center">
-  <img src="https://github.com/javierramirezzayas/logically/blob/master/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/blob/master/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
 
 ### Installation
 ##### Dependencies
