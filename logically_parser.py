@@ -1,6 +1,6 @@
 import ply.yacc as yacc
 import logically_lex
-import function_helper
+import function_run
 import logic_gates_drawer
 
 tokens = logically_lex.tokens
