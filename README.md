@@ -101,6 +101,7 @@ a or ( a and b )
  * After downloading the code open a terminal and run ```python logically.py```
  * Enjoy logically
  
+ 
  ### Developers
  ----
 The developers of logically are a group of students of the University of Puerto Rico at Mayagüez. The team members are: <a href="https://github.com/JeanOC19"> Jean O. Candelaria</a>, <a href="https://github.com/Gustavohernandez1"> Gustavo A. Hernandez</a>, <a href="https://github.com/YorkiSerrano"> Yorki G. Serrano</a> and <a href="https://github.com/javierramirezzayas"> Javier Ramirez</a>. This project was develepode as part of the Programming Language course (ICOM4036) directed by Dr. Wilson Rivera.
