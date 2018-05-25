@@ -95,8 +95,7 @@ a or ( a and b )
   * SchemDraw
   * Matplotlib
   * TKinter
-  * PLY
-  
+  * PLY 
 ##### Instructions
 * Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
 * After downloading the code open a terminal and run ```python logically.py```
