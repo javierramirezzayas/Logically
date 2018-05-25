@@ -46,7 +46,7 @@ d	e	out
 >>CKT out
 Generating circuit diagram
 ```
-![Figure of Circuit] (logicallyCKT.PNG)
+![Figure of Circuit] (logicallyCKT.JPG)
 ##### Example 2: Testing the Simplify
 ```
 >>out = AND x y z
@@ -76,7 +76,7 @@ Added Expression to:  exp
 Generating venn diagram
 a or ( a and b )
 ```
-![Figure of Venn Diagram] (logicallyVENN.PNG)
+![Figure of Venn Diagram] (logicallyVENN.JPG)
 
 ### Installation
 ##### Dependencies
