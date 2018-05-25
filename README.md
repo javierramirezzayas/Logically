@@ -4,18 +4,18 @@
 ---
 
 ### About
-----
+---
 Logically is a scripting language that can derive the combinational logic circuit of any logic expression. Given a set of logic operations, the language is capable of analyzing the resulting function and with a series of computations, a logical circuit will be derived.
 
 ### Introduction
-----
+---
 Boolean logic is a branch from algebra in which variables are evaluated with truth tables where said variables have a value of “1” or “0” and certain outcome based on the expression. The operations used for evaluating the logic are OR, AND & NOT. These operations are represented by disjunction(U), conjunction(∩), and negation(-), respectively. With these expressions, it is possible to express and evaluate Boolean Algebra. The following logic can then be used to construct circuits called combinational logic circuits (often referred as logical gates or logic circuits). 
 
 These combinational logic circuits can range from very simple ones to very complicated ones. And so, developers use different techniques to specify the function of these combinational logic circuits like Boolean Algebra, Truth Tables and Logic Diagrams. Common combinational circuits made up that carry out a desired application include: Multiplexers, Encoders, Decoders, Half Adders, Full Adders, etc.
 
 
 ### Language Features
-----
+---
 * Design logical circuits by implementing individual logic gates.
 * Create complex logical expressions from logic circuits.
 * Test circuits by generating truth tables.
@@ -25,7 +25,7 @@ These combinational logic circuits can range from very simple ones to very compl
 
 
 ### Program Examples
-----
+---
 ##### Example 1: Expression Build, Table Generation and Circuit Drawing
 ```
 >>out = OR a b
@@ -87,24 +87,22 @@ a or ( a and b )
 <p align="center">
   <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/master/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
 
-### Installation
-----
-##### Dependencies
 
+### Installation
+---
+##### Dependencies
 * Python 3.4 with the following packages:
   * SchemDraw
   * Matplotlib
   * TKinter
   * PLY
- 
- ##### Instructions
- 
- * Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
- * After downloading the code open a terminal and run ```python logically.py```
- * Enjoy logically
+##### Instructions
+* Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
+* After downloading the code open a terminal and run ```python logically.py```
+* Enjoy logically
  
  
- ### Developers
- ----
+### Developers
+---
 The developers of logically are a group of students of the University of Puerto Rico at Mayagüez. The team members are: <a href="https://github.com/JeanOC19"> Jean O. Candelaria</a>, <a href="https://github.com/Gustavohernandez1"> Gustavo A. Hernandez</a>, <a href="https://github.com/YorkiSerrano"> Yorki G. Serrano</a> and <a href="https://github.com/javierramirezzayas"> Javier Ramirez</a>. This project was develepode as part of the Programming Language course (ICOM4036) directed by Dr. Wilson Rivera.
   
