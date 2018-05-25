@@ -46,6 +46,7 @@ d	e	out
 >>CKT out
 Generating circuit diagram
 ```
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/master/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
 
@@ -78,6 +79,7 @@ Added Expression to:  exp
 Generating venn diagram
 a or ( a and b )
 ```
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/master/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
 
