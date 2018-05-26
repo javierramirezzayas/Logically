@@ -1,7 +1,3 @@
-<section class="page-header">
-      <a href="https://github.com/javierramirezzayas/Logically/archive/master.zip" class="btn">Download .zip</a>      
-</section>
-
 ## A Programming Language for Logic Circuits
 
 ---
