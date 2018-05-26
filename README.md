@@ -1,4 +1,4 @@
-# A Programming Language for Logic Circuits
+## A Programming Language for Logic Circuits
 
 ---
 
