@@ -52,7 +52,7 @@ Generating circuit diagram
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/master/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
 
 ##### Example 2: Testing the Simplify
 ```
@@ -85,7 +85,7 @@ a or ( a and b )
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/javierramirezzayas/logically/master/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
 
 
 ### Installation
@@ -97,7 +97,7 @@ a or ( a and b )
   * TKinter
   * PLY 
 ##### Instructions
-* Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/logically/zipball/master"> here </a>
+* Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/Logically/zipball/master"> here </a>
 * After downloading the code open a terminal and run ```python logically.py```
 * Enjoy logically
  
