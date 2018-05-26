@@ -5,6 +5,10 @@
 
 html { 
   .header_section {
-  @media screen and (max-width: 42em){.btn{display:block;width:100%;padding:0.75rem;font-size:0.9rem}.btn+.btn{margin-top:1rem;margin-left:0}}.page-header{color:#fff;text-align:center;background-color:#159957;background-image:url("https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/circuitsBackground.jpg") }
+  background-iamge: url("https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/circuitsBackground.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 }
