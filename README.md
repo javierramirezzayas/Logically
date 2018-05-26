@@ -106,5 +106,5 @@ a or ( a and b )
 ---
 The developers of logically are a group of students of the University of Puerto Rico at Mayagüez. The team members are: <a href="https://github.com/JeanOC19"> Jean O. Candelaria</a>, <a href="https://github.com/Gustavohernandez1"> Gustavo A. Hernandez</a>, <a href="https://github.com/YorkiSerrano"> Yorki G. Serrano</a> and <a href="https://github.com/javierramirezzayas"> Javier Ramirez</a>. This project was developed as part of the Programming Language course (ICOM4036) directed by Dr. Wilson Rivera.
 
-Final report for the class project can be found at the link in the top of the website or <a href="https://github.com/javierramirezzayas/Logically/master/Documents/Final%20Report%20-%20Logically.pdf"> here </a>.
+Final report for the class project can be found at the link in the top of the website or <a href="https://raw.githubusercontent.com/Logically/master/Documents/Final%20Report%20-%20Logically.pdf"> here </a>.
   
