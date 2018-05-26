@@ -3,12 +3,4 @@
 
 @import "{{ site.theme }}";
 
-html { 
-  .header_section {
-  background-image: url("https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/circuitsBackground.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-}
+.page-header{color:#fff;text-align:center;background-color:#159957;background-image:url("https://raw.githubusercontent.com/javierramirezzayas/Logically/master/example_images/circuitsBackground.jpg") }
