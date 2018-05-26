@@ -1,5 +1,4 @@
-# Logically
-#### A Programming Language for logic circuits
+# A Programming Language for Logic Circuits
 
 ---
 
