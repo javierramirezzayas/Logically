@@ -1,5 +1,3 @@
-<h1 class="project-name">Logically</h1>
-
 # Logically
 #### A Programming Language for logic circuits
 
