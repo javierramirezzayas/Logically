@@ -1,4 +1,4 @@
-from logic_gate_modules import logicGateModules
+from logically_exe.logic_gate_modules import logicGateModules
 
 
 def initDrawSchematic():

@@ -1,5 +1,5 @@
 import sys
-import logically_parser as parser
+from logically_exe import logically_parser as parser
 
 
 def read_file(name):

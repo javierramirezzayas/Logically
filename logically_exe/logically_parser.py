@@ -1,7 +1,5 @@
 import ply.yacc as yacc
-import logically_lex
-import function_run
-import logic_gates_drawer
+from logically_exe import function_run, logic_gates_drawer, logically_lex
 
 tokens = logically_lex.tokens
 forest = []

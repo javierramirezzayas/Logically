@@ -1,8 +1,5 @@
 import sys
-import expression_converter as conv
-import logic_gates_drawer as lgd
-import venn_drawer as venn
-import simplify as simp
+from logically_exe import logic_gates_drawer as lgd, venn_drawer as venn, expression_converter as conv, simplify as simp
 
 
 def function_parser(func, expression=None):
