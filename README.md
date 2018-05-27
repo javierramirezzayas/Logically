@@ -3,7 +3,7 @@
 ---
 ### **Video**
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=V1A-Ig0A0zM&feature=youtu.be"><img src="http://i3.ytimg.com/vi/V1A-Ig0A0zM/maxresdefault.jpg" alt="logically" height="400" width="600"></a>
+  <iframe width="420" height="315" src="https://www.youtube.com/watch?v=V1A-Ig0A0zM&feature=youtu.be" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
