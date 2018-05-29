@@ -106,7 +106,8 @@ a or ( a and b )
   
 ##### Instructions
 * Download the program to your machine. You can download the code from <a href="https://github.com/javierramirezzayas/Logically/zipball/master"> here </a>
-* After downloading the code open a terminal and run ```python logically.py```
+* After downloading the code open a terminal and change to the ```Logically``` directory.
+* Change to the ```logically_exe``` directory and run ```python logically.py```.
 * Enjoy logically
  
  
