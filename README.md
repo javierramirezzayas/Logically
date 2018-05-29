@@ -26,7 +26,7 @@ These combinational logic circuits can range from very simple ones to very compl
 * Test circuits by generating truth tables.
 * Simplify any logical expression with a single command.
 * Generate visual circuit diagrams from generated circuits.
-* Display the Venn Diagram of a given logical expression.
+* Display the venn diagram of a given logical expression.
 
 
 ### **Program Examples**
@@ -57,7 +57,7 @@ Generating circuit diagram
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/> Figure 1: Output from Example 1. </p>
 
 ##### **Example 2: Testing the Simplify**
 ```
@@ -90,7 +90,7 @@ a or ( a and b )
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/> Figure 2: Output from Example 3. </p>
 
 
 ### **Installation**
