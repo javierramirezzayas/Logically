@@ -23,7 +23,7 @@ These combinational logic circuits can range from very simple ones to very compl
 
 ### **How It Works**
 ---
-Following is a video tutorial on how to install and use Logically.
+The following is a video tutorial on how to install and use Logically.
 <div align="center">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/V1A-Ig0A0zM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
