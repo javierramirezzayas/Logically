@@ -1,12 +1,6 @@
 ## A Programming Language for Logic Circuits
 
 ---
-### **Video**
----
-<div align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/V1A-Ig0A0zM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-
 
 ### **About**
 ---
@@ -16,8 +10,7 @@ Logically is a scripting language that can derive the combinational logic circui
 ---
 Boolean logic is a branch from algebra in which variables are evaluated with truth tables where said variables have a value of “1” or “0” and certain outcome based on the expression. The operations used for evaluating the logic are OR, AND & NOT. These operations are represented by disjunction(U), conjunction(∩), and negation(-), respectively. With these expressions, it is possible to express and evaluate Boolean Algebra. The following logic can then be used to construct circuits called combinational logic circuits (often referred as logical gates or logic circuits). 
 
-These combinational logic circuits can range from very simple ones to very complicated ones. And so, developers use different techniques to specify the function of these combinational logic circuits like Boolean Algebra, Truth Tables and Logic Diagrams. Common combinational circuits made up that carry out a desired application include: Multiplexers, Encoders, Decoders, Half Adders, Full Adders, etc.
-
+These combinational logic circuits can range from very simple ones to very complicated ones. And so, developers use different techniques to specify the function of these combinational logic circuits like Boolean Algebra, Truth Tables and Logic Diagrams. Common combinational circuits made up that carry out a desired application include: Multiplexers, Encoders, Decoders, Half Adders, Full Adders, etc. Logically looks to simplify the process of designing logic circuits and to provide all the necessary tools used when dealing with logical expresions. Instead of spending a lot of time writing tables and karnaugh maps, users can obtain the same results by typing some simple commands.
 
 ### **Language Features**
 ---
@@ -28,6 +21,12 @@ These combinational logic circuits can range from very simple ones to very compl
 * Generate visual circuit diagrams from generated circuits.
 * Display the venn diagram of a given logical expression.
 
+### **How It Works**
+---
+Following is a video tutorial on how to install and use Logically.
+<div align="center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/V1A-Ig0A0zM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ### **Program Examples**
 ---
