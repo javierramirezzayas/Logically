@@ -57,7 +57,8 @@ Generating circuit diagram
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/> Figure 1: Output from Example 1. </p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyCKT.png" alt="logicallyCKT" height="400" width="400"/></p>
+<p align="center">Figure 1: Output from Example 1.</p>
 
 ##### **Example 2: Testing the Simplify**
 ```
@@ -90,7 +91,8 @@ a or ( a and b )
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/> Figure 2: Output from Example 3. </p>
+  <img src="https://raw.githubusercontent.com/javierramirezzayas/Logically/master/image_examples/logicallyVENN.png" alt="logicallyCKT" height="400" width="400"/></p>
+<p align="center">Figure 2: Output from Example 3.</p>
 
 
 ### **Installation**
